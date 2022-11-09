@@ -1,7 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import img from '../../assets/login.png'
+import img from '../../assets/download.png'
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
 
@@ -55,7 +55,7 @@ const Login = () => {
                 <div className="text-center lg:text-left">
                     <img className='w-3/4' src={img} alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm bg-slate-400 shadow-2xl bg-base-100 py-20">
+                <div className="card flex-shrink-0 w-full max-w-sm bg-slate-400 shadow-2xl py-20">
                     <h1 className="text-5xl text-center font-bold">Login</h1>
                     <form onSubmit={handleSignSubmit} className="card-body">
                         <div className="form-control">
