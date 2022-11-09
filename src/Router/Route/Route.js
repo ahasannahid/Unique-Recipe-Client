@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Addreview from "../../Pages/AddReview/Addreview";
 import Allrecipe from "../../Pages/Allrecipe/Allrecipe";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <RecipeDetails></RecipeDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`)
+            },
+            {
+                path: '/addreview/:id',
+                element: <Addreview></Addreview>,
                 loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`)
             },
             {
