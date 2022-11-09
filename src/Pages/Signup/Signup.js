@@ -9,6 +9,7 @@ const SignUp = () => {
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
         
@@ -43,6 +44,13 @@ const SignUp = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="text" name='email' placeholder="email" className="input input-bordered" required/>
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <input type="text" name='photoURL' placeholder="Photo URL" className="input input-bordered" />
                         </div>
 
                         <div className="form-control">

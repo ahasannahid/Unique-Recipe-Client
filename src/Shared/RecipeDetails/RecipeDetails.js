@@ -6,6 +6,8 @@ const RecipeDetails = () => {
     console.log(recipeDetails);
     const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipeDetails;
 
+    
+
     return (
         <div>
             <div className='text-center'>
@@ -25,6 +27,7 @@ const RecipeDetails = () => {
                     <div className='text-center'>Instructor: {cook?.name}</div>
                 </div>
             </div>
+            <h1 className='text-4xl my-5 text-center text-info'>Review About {recipe_name}</h1>
             <Link to={`/addreview/${_id}`}>
                 <button className="btn btn-primary mt-10">Add Review</button>
             </Link>

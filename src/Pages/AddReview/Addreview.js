@@ -49,7 +49,7 @@ const Addreview = () => {
             <form onSubmit={handlePlaceOrder}>
 
                 <h2 className='text-4xl text-center'>You are about to Review : <span className='font-semibold'>{recipe_name}</span></h2>
-                <h4 className='text-3xl text-center'>Price : {price}</h4>
+                
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 my-5'>
                     <input name='firstName' type="text" placeholder="First Name" className="input input-bordered input-ghost w-full " />
 
