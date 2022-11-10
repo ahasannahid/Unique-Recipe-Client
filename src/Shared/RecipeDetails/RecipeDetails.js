@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
+import useTitle from '../../Hooks/useTitle';
 import ShowReview from '../../Pages/MyReview/ShowReview';
 import Single from './Single';
 
 const RecipeDetails = () => {
+    useTitle('Details')
 
     const recipeDetails = useLoaderData();
 

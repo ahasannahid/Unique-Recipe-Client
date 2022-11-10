@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Addreview = () => {
     const recipe = useLoaderData();
     console.log(recipe);
+    useTitle('Add Review')
 
     const notify = () => toast("review update succesflly");
 

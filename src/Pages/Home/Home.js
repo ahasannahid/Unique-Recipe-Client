@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import banner from '../../../src/assets/banner.jpg'
+import useTitle from '../../Hooks/useTitle';
 import RecipeCard from '../../Shared/RecipeCard/RecipeCard';
 import Unique from './Unique';
 
 
 const Home = () => {
     const recipes = useLoaderData();
+    useTitle('Home')
     return (
         <div>
             <img src={banner} alt="" className='h-1/2' />

@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import useTitle from '../../Hooks/useTitle';
 
 const RecipeCard = ({ recipe }) => {
+    useTitle('Recipe')
     const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipe;
     return (
         <div>

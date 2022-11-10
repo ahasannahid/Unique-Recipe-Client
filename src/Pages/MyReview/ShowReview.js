@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const ShowReview = ({ singlereview, handleDelete }) => {
+    useTitle('Review')
     const { user } = useContext(AuthContext);
     // console.log(singlereview);
     const { review, customerName, recipeName, _id } = singlereview;

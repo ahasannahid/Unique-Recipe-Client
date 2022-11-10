@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider/AUthProvider";
+import useTitle from "../../Hooks/useTitle";
 import ShowReview from "./ShowReview";
 
 
 const MyReview = () => {
+    useTitle('Review')
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     const notify = () => toast("Review Deleted Successfully");

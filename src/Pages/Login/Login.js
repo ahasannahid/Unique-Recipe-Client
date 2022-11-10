@@ -4,8 +4,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/download.png'
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
+
+    useTitle('Login')
 
     const [error, setError] = useState(' ')
     const navigate = useNavigate();

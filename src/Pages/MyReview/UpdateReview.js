@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useTitle from '../../Hooks/useTitle';
 
 const UpdateReview = () => {
+    useTitle('Review')
     const notify = () => toast("Review Update Successfully");
     const  storedreview  = useLoaderData();
 

@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/signup.png';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 
 const SignUp = () => {
+    useTitle('Sign Up')
     const {createUser} = useContext(AuthContext);
     const navigate = useNavigate();
 

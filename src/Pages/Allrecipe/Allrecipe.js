@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import RecipeCard from '../../Shared/RecipeCard/RecipeCard';
 
 const Allrecipe = () => {
     const allRecipe = useLoaderData();
+    useTitle('All Recipe')
     return (
        <div>
         <h1 className='text-4xl font-semibold mb-10 text-center' >Here is my All Recipe</h1>
