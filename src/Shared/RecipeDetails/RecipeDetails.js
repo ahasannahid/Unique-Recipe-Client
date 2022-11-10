@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const RecipeDetails = () => {
     const recipeDetails = useLoaderData();
-    console.log(recipeDetails);
+    
     const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipeDetails;
 
     
