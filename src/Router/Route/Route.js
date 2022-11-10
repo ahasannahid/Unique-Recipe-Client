@@ -6,6 +6,7 @@ import Allrecipe from "../../Pages/Allrecipe/Allrecipe";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReview from "../../Pages/MyReview/MyReview";
+import UpdateReview from "../../Pages/MyReview/UpdateReview";
 import SignUp from "../../Pages/Signup/Signup";
 import Blog from "../../Shared/Blog/Blog";
 import RecipeDetails from "../../Shared/RecipeDetails/RecipeDetails";
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
                 path: '/signup',
                 element: <SignUp></SignUp>
             },
+            {
+                path: '/update/:id',
+                element: <UpdateReview></UpdateReview>,
+                loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
+            }
         ]
     }
 ]);

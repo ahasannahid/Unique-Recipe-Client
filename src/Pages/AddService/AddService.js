@@ -41,11 +41,11 @@ const AddService = () => {
     return (
         <form onSubmit={handleAddService}>              
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 my-5'>
-                    <input name='recipe_name' type="text" placeholder="Recipe Name" className="input input-bordered input-ghost w-full " />
+                    <input name='recipe_name' type="text" placeholder="Recipe Name" className="input input-bordered input-ghost w-full " required/>
 
-                    <input name='price' type="number" placeholder="Price" className="input input-bordered input-ghost w-full " />
+                    <input name='price' type="number" placeholder="Price" className="input input-bordered input-ghost w-full " required/>
 
-                    <input name='photoURL' type="text" placeholder="Photo URL" className="input input-bordered w-full input-ghost " />
+                    <input name='photoURL' type="text" placeholder="Photo URL" className="input input-bordered w-full input-ghost " required />
                 </div>
 
                 <textarea name='details' className="textarea textarea-bordered h-24 w-full" placeholder="Recipe Details" required></textarea>

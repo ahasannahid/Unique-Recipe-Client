@@ -19,7 +19,7 @@ const ShowReview = ({ singlereview, handleDelete }) => {
 
                     <div className="card-actions justify-end">
                         <p>Reviewer Name: {customerName} </p>
-                        <Link to='/updatereview'>
+                        <Link to={`/update/${_id}`}>
                             <button className="btn btn-primary mr-5">Update Review</button>
                         </Link>
                         <button onClick={() => handleDelete(_id)} className="btn btn-primary">Delete Review</button>
