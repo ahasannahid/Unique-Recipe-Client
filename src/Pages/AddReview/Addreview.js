@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
 
 const Addreview = () => {
     const recipe = useLoaderData();
+    const notify = () => toast("review place succesflly");
     const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipe;
 
     const { user } = useContext(AuthContext);
@@ -35,7 +37,7 @@ const Addreview = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('review place succesflly')
+                    notify()
                     form.reset();
 
                 }
@@ -59,7 +61,7 @@ const Addreview = () => {
                     <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-bordered w-full input-ghost" readOnly />
                 </div>
 
-                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your Message" required></textarea>
+                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your Review" required></textarea>
 
                 <div className='text-center mt-5'>
                     <input className='btn ' type="submit" value="Add Your Review" />
