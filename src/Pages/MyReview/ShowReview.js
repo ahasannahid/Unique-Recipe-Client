@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
 
 const ShowReview = ({ singlereview, handleDelete }) => {
@@ -18,7 +19,9 @@ const ShowReview = ({ singlereview, handleDelete }) => {
 
                     <div className="card-actions justify-end">
                         <p>Reviewer Name: {customerName} </p>
-                        <button className="btn btn-primary mr-5">Update Review</button>
+                        <Link to='/updatereview'>
+                            <button className="btn btn-primary mr-5">Update Review</button>
+                        </Link>
                         <button onClick={() => handleDelete(_id)} className="btn btn-primary">Delete Review</button>
                     </div>
                 </div>

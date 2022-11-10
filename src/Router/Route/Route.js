@@ -5,7 +5,6 @@ import AddService from "../../Pages/AddService/AddService";
 import Allrecipe from "../../Pages/Allrecipe/Allrecipe";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
-import Loginto from "../../Pages/Login/Loginto";
 import MyReview from "../../Pages/MyReview/MyReview";
 import SignUp from "../../Pages/Signup/Signup";
 import Blog from "../../Shared/Blog/Blog";
@@ -49,6 +48,7 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
             },
+           
             {
                 path: '/blog',
                 element: <Blog></Blog>

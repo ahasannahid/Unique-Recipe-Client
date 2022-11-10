@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import banner from '../../../src/assets/banner.jpg'
 import RecipeCard from '../../Shared/RecipeCard/RecipeCard';
+import Unique from './Unique';
 
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
                     <button className="btn btn-secondary">See All Recipe</button>
                 </Link>
             </div>
+            <Unique></Unique>
         </div>
     );
 };

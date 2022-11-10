@@ -4,18 +4,9 @@ const Footer = () => {
     return (
         <footer className="footer mt-10 p-10 bg-base-300 text-base-content">
             <div>
-                <span className="footer-title">Services</span>
-                <a href='#' className="link link-hover">Branding</a>
-                <a href='#' className="link link-hover">Design</a>
-                <a href='#' className="link link-hover">Marketing</a>
-                <a href='#' className="link link-hover">Advertisement</a>
-            </div>
-            <div>
                 <span className="footer-title">Company</span>
-                <a href='#' className="link link-hover">About us</a>
+                <a href='#' className="link link-hover">About Ahasan Nahid</a>
                 <a href='#' className="link link-hover">Contact</a>
-                <a href='#' className="link link-hover">Jobs</a>
-                <a href='#' className="link link-hover">Press kit</a>
             </div>
             <div>
                 <span className="footer-title">Social</span>
