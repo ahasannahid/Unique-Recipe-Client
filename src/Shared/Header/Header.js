@@ -15,6 +15,11 @@ const Header = () => {
 
     const menuItems = <>
         <li className='font-semibold mr-2'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'>
+                        <Link to='/blog'>
+                            <button className="btn btn-success">Blog</button>
+                        </Link>
+                    </li>
         {
             user?.uid ?
                 <>
@@ -37,6 +42,7 @@ const Header = () => {
                     </li>
                 </>
         }
+
 
     </>
     return (

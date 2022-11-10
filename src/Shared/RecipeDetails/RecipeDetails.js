@@ -1,11 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
+import ShowReview from '../../Pages/MyReview/ShowReview';
+import Single from './Single';
 
 const RecipeDetails = () => {
+    
     const recipeDetails = useLoaderData();
     
     const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipeDetails;
 
+    const { user } = useContext(AuthContext);
+    const [reviews, setReviews] = useState([]);
+    const [singleReviews, setSingleReviews] = useState([]);
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/specificreviews?recipe=${_id}`)
+            .then(res => res.json())
+            .then(data => setSingleReviews(data))
+    }, [_id])
+    
+
+    console.log(singleReviews);
     
 
     return (
@@ -27,7 +44,18 @@ const RecipeDetails = () => {
                     <div className='text-center'>Instructor: {cook?.name}</div>
                 </div>
             </div>
-            <h1 className='text-4xl my-5 text-center text-info'>Review About {recipe_name}</h1>
+            <h1 className='text-4xl my-5 text-center text-info'>{singleReviews.length}  Review About {recipe_name}</h1>
+            
+            {/* <ShowReview ></ShowReview> */}
+        <div className='grid grid-cols-2'>
+            {
+                singleReviews.map(single => <Single
+                key={single._id}
+                single={single}
+                ></Single>)
+            }
+        </div>
+
             <Link to={`/addreview/${_id}`}>
                 <button className="btn btn-primary mt-10">Add Review</button>
             </Link>
