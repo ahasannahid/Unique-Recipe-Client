@@ -16,28 +16,30 @@ const MyReview = () => {
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
-       if(proceed){
-        fetch(`http://localhost:5000/reviews/${id}`, {
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data);
-            if(data.deletedCount > 0){
-                alert('Deleted Successfully')
-                const remaining = reviews.filter(review => review._id !== id);
-                setReviews(remaining);
-            }
-        })
-       }
+        if (proceed) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('Deleted Successfully')
+                        const remaining = reviews.filter(review => review._id !== id);
+                        setReviews(remaining);
+                    }
+                })
+        }
     }
 
 
     return (
         <div>
-            <h2 className="text-3xl text-center">You Have {reviews.length} Reviews</h2>
-            <div className="overflow-x-auto w-full grid grid-cols-3 my-4">
-               
+           
+                <div>
+                    <h2 className="text-3xl text-center">You Have {reviews.length} Reviews</h2>
+                    <div className="overflow-x-auto w-full grid grid-cols-3 my-4">
+
                         {
                             reviews.map(review => <ShowReview
                                 key={review._id}
@@ -45,7 +47,9 @@ const MyReview = () => {
                                 handleDelete={handleDelete}
                             ></ShowReview>)
                         }
-            </div>
+                    </div>
+                </div>
+
         </div>
     );
 };
