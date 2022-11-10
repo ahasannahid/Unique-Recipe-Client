@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const UpdateReview = () => {
-
+    const notify = () => toast("Review Update Successfully");
     const  storedreview  = useLoaderData();
 
     console.log(storedreview);
@@ -23,7 +24,7 @@ const UpdateReview = () => {
         .then(data => {
             console.log(data);
         })
-        alert('update successfully')
+        notify();
     }
 
     const handleInputChange = event => {

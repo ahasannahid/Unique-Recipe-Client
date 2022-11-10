@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider/AUthProvider";
 import ShowReview from "./ShowReview";
 
@@ -6,6 +7,7 @@ import ShowReview from "./ShowReview";
 const MyReview = () => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+    const notify = () => toast("Review Deleted Successfully");
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
@@ -24,7 +26,7 @@ const MyReview = () => {
                 .then(data => {
                     // console.log(data);
                     if (data.deletedCount > 0) {
-                        alert('Deleted Successfully')
+                        notify();
                         const remaining = reviews.filter(review => review._id !== id);
                         setReviews(remaining);
                     }

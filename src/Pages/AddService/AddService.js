@@ -1,6 +1,9 @@
 import React from 'react';
+import { toast } from 'react-toastify';
+
 
 const AddService = () => {
+    const notify = () => toast("Service Added Successfully");
 
     const handleAddService =(event) => {
 
@@ -30,7 +33,9 @@ const AddService = () => {
         .then(data => {
             console.log(data)
             if(data.acknowledged){
-                alert('Add Service succesflly')
+
+                notify();
+                
                 form.reset();
             }
         })
