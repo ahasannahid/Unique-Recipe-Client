@@ -5,12 +5,15 @@ import { AuthContext } from '../../Context/AuthProvider/AUthProvider';
 
 const Addreview = () => {
     const recipe = useLoaderData();
-    const notify = () => toast("review place succesflly");
-    const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipe;
+    console.log(recipe);
+
+    const notify = () => toast("review update succesflly");
+
+    const {  recipe_name, _id } = recipe;
 
     const { user } = useContext(AuthContext);
 
-    const handlePlaceOrder = event => {
+    const handlereview = event => {
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
@@ -47,8 +50,8 @@ const Addreview = () => {
 
     return (
         <div className='my-8'>
-
-            <form onSubmit={handlePlaceOrder}>
+            
+            <form onSubmit={handlereview}>
 
                 <h2 className='text-4xl text-center'>You are about to Review : <span className='font-semibold'>{recipe_name}</span></h2>
                 

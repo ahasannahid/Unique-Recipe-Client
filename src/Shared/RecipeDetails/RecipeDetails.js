@@ -10,8 +10,9 @@ const RecipeDetails = () => {
 
     const { rating, total_view, cook, recipe_name, price, img_url, recipe_details, _id } = recipeDetails;
 
-    const { user } = useContext(AuthContext);
-    const [reviews, setReviews] = useState([]);
+    // const { user } = useContext(AuthContext);
+
+    // const [reviews, setReviews] = useState([]);
     const [singleReviews, setSingleReviews] = useState([]);
 
 
@@ -55,10 +56,6 @@ const RecipeDetails = () => {
                     ></Single>)
                 }
             </div>
-
-            {/* <Link to={`/addreview/${_id}`}>
-                <button className="btn btn-primary mt-10">Add Review</button>
-            </Link> */}
 
             {
                 <Link to={`/addreview/${_id}`}>

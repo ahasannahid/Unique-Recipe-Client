@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
-import AddService from "../../Pages/AddReview/Addreview";
-import Addreview from "../../Pages/AddService/AddService";
+import Addreview from "../../Pages/AddReview/Addreview";
+import AddService from "../../Pages/AddService/AddService";
+
 import Allrecipe from "../../Pages/Allrecipe/Allrecipe";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
