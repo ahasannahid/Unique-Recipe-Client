@@ -21,6 +21,5 @@
         <li>Add Service Section</li>
         <li>Sorting Service by Decending order</li>
         <li>Delete Review and Add review</li>
-        
     </ul>
     
